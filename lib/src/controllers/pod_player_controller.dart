@@ -126,6 +126,9 @@ class PodPlayerController {
   /// pauses the video
   void pause() => _ctr.podVideoStateChanger(PodVideoState.paused);
 
+  ///set the playback speed. speed need to be provided with x. example: setPlayBackSpeed(1.5x)
+  void setPlayBackSpeed(String speed) => _ctr.setVideoPlayBack(speed);
+
   /// toogle play and pause
   void togglePlayPause() {
     isVideoPlaying ? pause() : play();
@@ -185,8 +188,7 @@ class PodPlayerController {
       );
 
   //Change double tap duration
-  void setDoubeTapForwarDuration(int seconds) =>
-      _ctr.doubleTapForwardSeconds = seconds;
+  void setDoubeTapForwarDuration(int seconds) => _ctr.doubleTapForwardSeconds = seconds;
 
   ///Jumps to specific position of the video
   Future<void> videoSeekTo(Duration moment) async {
