@@ -118,8 +118,11 @@ class PodPlayerController {
   /// Returns the current position of the video
   Duration get currentVideoPosition => _ctr.videoPosition;
 
-  /// Returns the current position of the video
+  /// Returns the available video qualities
   List<VideoQalityUrls> get videoUrls => _ctr.vimeoOrVideoUrls;
+
+  /// Returns the playing video qualitie
+  int? get playingVideoQuality => _ctr.vimeoPlayingVideoQuality;
 
   //! video play/pause
 
