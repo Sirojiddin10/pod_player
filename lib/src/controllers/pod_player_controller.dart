@@ -118,6 +118,9 @@ class PodPlayerController {
   /// Returns the current position of the video
   Duration get currentVideoPosition => _ctr.videoPosition;
 
+  /// Returns the current position of the video
+  List<VideoQalityUrls> get videoUrls => _ctr.vimeoOrVideoUrls;
+
   //! video play/pause
 
   /// plays the video
@@ -126,8 +129,11 @@ class PodPlayerController {
   /// pauses the video
   void pause() => _ctr.podVideoStateChanger(PodVideoState.paused);
 
-  ///set the playback speed. speed need to be provided with x. example: setPlayBackSpeed(1.5x)
+  ///sets the playback speed. speed need to be provided with x. example: setPlayBackSpeed(1.5x)
   void setPlayBackSpeed(String speed) => _ctr.setVideoPlayBack(speed);
+
+  ///sets the playback speed. speed need to be provided with x. example: setPlayBackSpeed(1.5x)
+  void changeVideoQuality(int quality) => _ctr.changeVideoQuality(quality);
 
   /// toogle play and pause
   void togglePlayPause() {
